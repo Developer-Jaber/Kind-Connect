@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom"
+
 const LoginPage = () => {
   return (
     <div className='flex justify-center items-center bg-gray-100 min-h-screen'>
       <div className='bg-white shadow-lg p-8 rounded-lg w-full max-w-md'>
         <h2 className='mb-6 font-bold text-2xl text-center'>
-          Create an account
+          Log In
         </h2>
         <form action="">
             <input className="my-3 input-bordered w-full max-w-full input" type="text" placeholder="Enter your email" />
@@ -55,9 +57,9 @@ const LoginPage = () => {
         </p>
         <p className='mt-4 text-center'>
           Ceate a new account?{' '}
-          <a href='#' className='text-blue-500'>
+          <Link to='/signup' className='text-blue-500'>
             Sign up
-          </a>
+          </Link>
         </p>
       </div>
     </div>
