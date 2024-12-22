@@ -92,13 +92,13 @@ const Navber = () => {
             <span className='badge badge-primary badge-xs indicator-item'></span>
           </div>
         </button>
-        <button>
+        <Link to='/login'>
           <img
             className='w-12'
             src='https://img.icons8.com/?size=100&id=HmQQr0jYHZxu&format=png&color=000000'
             alt=''
           />
-        </button>
+        </Link>
       </div>
     </div>
   )
