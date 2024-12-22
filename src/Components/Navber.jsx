@@ -1,3 +1,4 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
 const Navber = () => {
@@ -24,6 +25,8 @@ const Navber = () => {
       </li>
     </>
   )
+
+  
   return (
     <div className='bg-base-100 navbar'>
       <div className='navbar-start'>
