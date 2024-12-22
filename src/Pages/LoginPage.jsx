@@ -1,48 +1,64 @@
-import { useContext } from "react"
-import { Link } from "react-router-dom"
-import { AuthContext } from "../Provider/AuthProvider"
+import { useContext } from 'react'
+import { Link } from 'react-router-dom'
+import { AuthContext } from '../Provider/AuthProvider'
 
 const LoginPage = () => {
-  const {loginWithGoogle, loginUser} = useContext(AuthContext);
-
-  const handleLoginUser = (e) =>{
-    e.preventDefault();
-
-    const form = e.target;
-    const email = form.email.value;
-    const password = form.password.value;
-
-    loginUser(email,password)
-    .then(data=>{
-      console.log(data.user);
-    })
-    .catch(error=>{
-      console.log(error);
-    })
-
-  }
+  const { loginWithGoogle, loginUser,user, setUser } = useContext(AuthContext)
   
+
+  const handleLoginUser = e => {
+    e.preventDefault()
+
+    const form = e.target
+    const email = form.email.value
+    const password = form.password.value
+
+    loginUser(email, password)
+      .then(data => {
+        const user = data.user;
+        setUser(user)
+        console.log(user)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  }
+
   const handlePopUpLogin = () => {
     loginWithGoogle()
-    .then(result=>{
-      console.log(result);
-    })
-    .catch(error=>{
-      console.log(error);
-    })
+      .then(result => {
+        console.log(result)
+        setUser(result.user)
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
   return (
     <div className='flex justify-center items-center bg-gray-100 min-h-screen'>
       <div className='bg-white shadow-lg p-8 rounded-lg w-full max-w-md'>
-        <h2 className='mb-6 font-bold text-2xl text-center'>
-          Log In
-        </h2>
+        <h2 className='mb-6 font-bold text-2xl text-center'>Log In</h2>
         <form onSubmit={handleLoginUser}>
-            <input name="email" className="my-3 input-bordered w-full max-w-full input" type="text" placeholder="Enter your email" />
-            <input name="password" className="my-3 input-bordered w-full max-w-full input" type="password" placeholder="Enter your password" />
-            <button type="submit" className="bg-green-100 my-3 w-full btn">Login</button>
+          <input
+            name='email'
+            className='my-3 input-bordered w-full max-w-full input'
+            type='text'
+            placeholder='Enter your email'
+          />
+          <input
+            name='password'
+            className='my-3 input-bordered w-full max-w-full input'
+            type='password'
+            placeholder='Enter your password'
+          />
+          <button type='submit' className='bg-green-100 my-3 w-full btn'>
+            Login
+          </button>
         </form>
-        <button onClick={handlePopUpLogin} className='flex justify-center items-center border-2 mb-4 px-4 py-2 rounded-md w-full'>
+        <button
+          onClick={handlePopUpLogin}
+          className='flex justify-center items-center border-2 mb-4 px-4 py-2 rounded-md w-full'
+        >
           <img
             src='https://img.icons8.com/color/48/000000/google-logo.png'
             alt='Google'
@@ -73,7 +89,7 @@ const LoginPage = () => {
             />
           </button>
         </div>
-        
+
         <p className='text-center text-gray-500 text-sm'>
           By continuing, you agree to VolunteerHub’s{' '}
           <a href='#' className='text-blue-500'>

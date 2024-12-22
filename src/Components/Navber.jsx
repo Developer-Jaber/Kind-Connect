@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { AuthContext } from '../Provider/AuthProvider'
 
 const Navber = () => {
   const link = (
@@ -26,6 +27,7 @@ const Navber = () => {
     </>
   )
 
+  const {user} = useContext(AuthContext)
   
   return (
     <div className='bg-base-100 navbar'>
