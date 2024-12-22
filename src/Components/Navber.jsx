@@ -21,6 +21,9 @@ const Navber = () => {
             <li>
               <Link>Manage My Posts</Link>
             </li>
+            <li>
+              <Link to='/user-profile'>Profile</Link>
+            </li>
           </ul>
         </details>
       </li>
@@ -98,11 +101,17 @@ const Navber = () => {
           </div>
         </button>
         <Link to='/login'>
-          <img
-            className='w-12'
-            src='https://img.icons8.com/?size=100&id=HmQQr0jYHZxu&format=png&color=000000'
-            alt=''
-          />
+          {
+            user && user?.email ? (<img
+              className='rounded-full w-12'
+              src={user.photoURL}
+              alt={user && user?.displayName}
+            />) : (<img
+              className='w-12'
+              src='https://img.icons8.com/?size=100&id=HmQQr0jYHZxu&format=png&color=000000'
+              alt=''
+            />)
+          }
         </Link>
       </div>
     </div>
