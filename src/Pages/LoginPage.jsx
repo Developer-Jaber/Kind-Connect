@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../Provider/AuthProvider'
+import axios from 'axios'
 
 const LoginPage = () => {
   const { loginWithGoogle, loginUser,user, setUser } = useContext(AuthContext)
@@ -27,8 +28,15 @@ const LoginPage = () => {
   const handlePopUpLogin = () => {
     loginWithGoogle()
       .then(result => {
-        console.log(result)
-        setUser(result.user)
+        const newUser = result.user
+        setUser(newUser)
+        axios.post('http://localhost:5000/users',newUser)
+        .then((data)=>{
+          console.log(data);
+        })
+        .catch((error)=>{
+          console.log(error);
+        })
       })
       .catch(error => {
         console.log(error)

@@ -103,7 +103,7 @@ const Navber = () => {
         <Link to='/login'>
           {
             user && user?.email ? (<img
-              className='rounded-full w-12'
+              className='rounded-full w-12 cursor-pointer'
               src={user.photoURL}
               alt={user && user?.displayName}
             />) : (<img
