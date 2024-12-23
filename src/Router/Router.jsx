@@ -4,6 +4,7 @@ import Home from '../Home/Home'
 import LoginPage from '../Pages/LoginPage'
 import RegisterPage from '../Pages/RegisterPage'
 import Profile from '../Pages/Profile'
+import VolunteerPostsPage from '../Pages/VolunteerPostsPage'
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: '/all-volentiar-need-Post',
+        element: <VolunteerPostsPage></VolunteerPostsPage>
       },
       {
         path: '/login',

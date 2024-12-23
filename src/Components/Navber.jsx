@@ -9,7 +9,7 @@ const Navber = () => {
         <Link>Home</Link>
       </li>
       <li>
-        <Link>All volunteer Need posts</Link>
+        <Link to='all-volentiar-need-Post'>All volunteer Need posts</Link>
       </li>
       <li>
         <details>

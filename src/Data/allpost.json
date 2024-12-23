@@ -1,0 +1,181 @@
+
+
+
+
+
+
+
+
+
+
+
+[
+    {
+      "thumbnail": "https://i.ibb.co/dDRB7Fg/image.png",
+      "postTitle": "Healthcare Aid for Elderly",
+      "description": "Assist elderly people with daily activities in local healthcare centers.",
+      "category": "healthcare",
+      "location": "New York, NY",
+      "volunteersNeeded": 5,
+      "deadline": "2024-12-31",
+      "organizerName": "John Doe",
+      "organizerEmail": "john.doe@example.com"
+    },
+    {
+      "thumbnail": "https://i.ibb.co/jVN4xF4/image.png",
+      "postTitle": "Tutoring Underprivileged Children",
+      "description": "Provide after-school tutoring for children in low-income areas.",
+      "category": "education",
+      "location": "Los Angeles, CA",
+      "volunteersNeeded": 10,
+      "deadline": "2024-12-29",
+      "organizerName": "Jane Smith",
+      "organizerEmail": "jane.smith@example.com"
+    },
+    {
+      "thumbnail": "https://i.ibb.co/3Rrnqf4/image.png",
+      "postTitle": "Community Cleanup",
+      "description": "Join us to clean up our local parks and streets.",
+      "category": "social service",
+      "location": "Chicago, IL",
+      "volunteersNeeded": 20,
+      "deadline": "2024-12-25",
+      "organizerName": "Bob Johnson",
+      "organizerEmail": "bob.johnson@example.com"
+    },
+    {
+      "thumbnail": "https://i.ibb.co/gSzXkFH/image.png",
+      "postTitle": "Animal Shelter Support",
+      "description": "Help care for animals at our local shelter.",
+      "category": "animal welfare",
+      "location": "Houston, TX",
+      "volunteersNeeded": 8,
+      "deadline": "2024-12-28",
+      "organizerName": "Alice Davis",
+      "organizerEmail": "alice.davis@example.com"
+    },
+    {
+      "thumbnail": "https://i.ibb.co/9qfb6Vs/image.png",
+      "postTitle": "Food Bank Distribution",
+      "description": "Assist with packing and distributing food to those in need.",
+      "category": "social service",
+      "location": "Phoenix, AZ",
+      "volunteersNeeded": 15,
+      "deadline": "2024-12-30",
+      "organizerName": "Michael Brown",
+      "organizerEmail": "michael.brown@example.com"
+    },
+    {
+      "thumbnail": "https://i.ibb.co/QY4ymvy/image.png",
+      "postTitle": "Youth Sports Coaching",
+      "description": "Volunteer as a coach for local youth sports teams.",
+      "category": "education",
+      "location": "Philadelphia, PA",
+      "volunteersNeeded": 6,
+      "deadline": "2024-12-27",
+      "organizerName": "Chris Wilson",
+      "organizerEmail": "chris.wilson@example.com"
+    },
+    {
+      "thumbnail": "https://i.ibb.co/KbnMH23/image.png",
+      "postTitle": "Homeless Shelter Assistance",
+      "description": "Help with daily operations at the homeless shelter.",
+      "category": "social service",
+      "location": "San Antonio, TX",
+      "volunteersNeeded": 12,
+      "deadline": "2024-12-26",
+      "organizerName": "Patricia Lee",
+      "organizerEmail": "patricia.lee@example.com"
+    },
+    {
+      "thumbnail": "https://i.ibb.co/QnMX166/image.png",
+      "postTitle": "Beach Cleanup",
+      "description": "Join us in cleaning our beautiful beaches.",
+      "category": "social service",
+      "location": "San Diego, CA",
+      "volunteersNeeded": 25,
+      "deadline": "2024-12-31",
+      "organizerName": "Linda Martin",
+      "organizerEmail": "linda.martin@example.com"
+    },
+    {
+      "thumbnail": "https://i.ibb.co/N6hCYNn/image.png",
+      "postTitle": "Library Book Drive",
+      "description": "Help organize and distribute books for the library book drive.",
+      "category": "education",
+      "location": "Dallas, TX",
+      "volunteersNeeded": 5,
+      "deadline": "2024-12-29",
+      "organizerName": "Barbara Garcia",
+      "organizerEmail": "barbara.garcia@example.com"
+    },
+    {
+      "thumbnail": "https://i.ibb.co/8gjf0gj/image.png",
+      "postTitle": "Senior Citizen Companion",
+      "description": "Spend time with senior citizens and assist with activities.",
+      "category": "healthcare",
+      "location": "San Jose, CA",
+      "volunteersNeeded": 7,
+      "deadline": "2024-12-28",
+      "organizerName": "Kevin Rodriguez",
+      "organizerEmail": "kevin.rodriguez@example.com"
+    },
+    {
+      "thumbnail": "https://i.ibb.co/9gyTKwp/image.png",
+      "postTitle": "Blood Donation Drive",
+      "description": "Assist in organizing and managing a local blood donation drive.",
+      "category": "healthcare",
+      "location": "Austin, TX",
+      "volunteersNeeded": 10,
+      "deadline": "2024-12-27",
+      "organizerName": "Karen Hernandez",
+      "organizerEmail": "karen.hernandez@example.com"
+    },
+    {
+      "thumbnail": "https://i.ibb.co/4g0DFcP/image.png",
+      "postTitle": "Environmental Conservation",
+      "description": "Participate in tree planting and conservation activities.",
+      "category": "social service",
+      "location": "Jacksonville, FL",
+      "volunteersNeeded": 15,
+      "deadline": "2024-12-30",
+      "organizerName": "Nancy Martinez",
+      "organizerEmail": "nancy.martinez@example.com"
+    },
+    {
+      "thumbnail": "https://i.ibb.co/vJkb6hp/image.png",
+      "postTitle": "Childcare Volunteer",
+      "description": "Help care for children in community centers.",
+      "category": "social service",
+      "location": "Fort Worth, TX",
+      "volunteersNeeded": 8,
+      "deadline": "2024-12-29",
+      "organizerName": "Betty Clark",
+      "organizerEmail": "betty.clark@example.com"
+    },
+    {
+      "thumbnail": "https://i.ibb.co/DY92bsL/image.png",
+      "postTitle": "Animal Adoption Event",
+      "description": "Assist with organizing and running an animal adoption event.",
+      "category": "animal welfare",
+      "location": "Columbus, OH",
+      "volunteersNeeded": 12,
+      "deadline": "2024-12-31",
+      "organizerName": "Sandra Lewis",
+      "organizerEmail": "sandra.lewis@example.com"
+    },
+    {
+      "thumbnail": "https://i.ibb.co/51vBMtC/image.png",
+      "postTitle": "Disaster Relief Assistance",
+      "description": "Provide support and aid to disaster-stricken areas.",
+      "category": "social service",
+      "location": "Charlotte, NC",
+      "volunteersNeeded": 20,
+      "deadline": "2024-12-28",
+      "organizerName": "Donald Walker",
+      "organizerEmail": "donald.walker@example.com"
+    }
+  ]
+  
+
+
