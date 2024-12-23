@@ -58,6 +58,11 @@ const VolunteerNeedsNow = () => {
           </div>
         ))}
       </div>
+      <div class='flex justify-center my-20'>
+        <Link to='/all-volentiar-need-Post' className='px-10 btn btn-primary'>
+          See all
+        </Link>
+      </div>
     </div>
   )
 }
