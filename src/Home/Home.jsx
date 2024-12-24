@@ -3,6 +3,7 @@ import Hero from '../Components/Hero';
 import VolunteerNeedsNow from '../Components/VolunteerNeedsNow';
 import UpcomingEvent from '../Components/UpcomingEvent';
 import SuccessStory from '../Components/SuccessStory';
+import BackToTopButton from '../Components/BackToTopButton ';
 
 const Home = () => {
     return (
@@ -19,6 +20,7 @@ const Home = () => {
             <section>
                 <SuccessStory></SuccessStory>
             </section>
+            <BackToTopButton></BackToTopButton>
         </main>
     );
 };

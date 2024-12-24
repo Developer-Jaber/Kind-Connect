@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import BackToTopButton from '../Components/BackToTopButton ';
 
 const VolunteerPostsPage = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -47,6 +48,7 @@ const VolunteerPostsPage = () => {
             </div>
           </div>
         ))}
+        <BackToTopButton></BackToTopButton>
       </div>
     </div>
   );

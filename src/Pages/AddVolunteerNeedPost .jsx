@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { AuthContext } from '../Provider/AuthProvider';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 const AddVolunteerNeedPost = () => {
   const {user} = useContext(AuthContext)
@@ -12,8 +13,14 @@ const AddVolunteerNeedPost = () => {
   const onSubmit = data => {
     data.deadline = deadline;
     console.log(data);
-    // Add the logic to handle the form submission, e.g., sending data to the server
-
+    // sending data to the server
+    axios.post('http://localhost:5000/all-posts',data)
+    .then(()=>{
+        console.log('Successfully submitted the post!');
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
 
     // Reset the form fields after successful submission
     reset();
@@ -40,7 +47,7 @@ const AddVolunteerNeedPost = () => {
           <label className="block font-medium text-sm">Post Title</label>
           <input
             type="text"
-            {...register('title')}
+            {...register('postTitle')}
             className="border-gray-300 p-2 border rounded w-full"
             placeholder="Post Title"
             required
