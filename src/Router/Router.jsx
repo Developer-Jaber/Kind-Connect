@@ -6,11 +6,13 @@ import RegisterPage from '../Pages/RegisterPage'
 import Profile from '../Pages/Profile'
 import VolunteerPostsPage from '../Pages/VolunteerPostsPage'
 import Private from '../Private/Private'
+import ErrorPage from '../Error/ErrorPage'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
