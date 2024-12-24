@@ -1,18 +1,19 @@
 import React, { useContext } from 'react'
 import { AuthContext } from '../Provider/AuthProvider'
 import { FaGithub, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 
 const Profile = () => {
     const {user, userLogOut} = useContext(AuthContext);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const handleLogOutUser = () => {
         userLogOut()
         .then(()=>{
             console.log('sign out succesfull...!');
-            navigate('/home')
+            // navigate('/home')
+            <Navigate to='/'></Navigate>
         })
     }
   return (

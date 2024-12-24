@@ -26,7 +26,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/all-volentiar-need-Post/details/:id',
-        element: <VolentiarNeedPostDetails></VolentiarNeedPostDetails>,
+        element: <Private><VolentiarNeedPostDetails></VolentiarNeedPostDetails></Private>,
         loader: ({params})=>fetch(`http://localhost:5000/all-posts/${params.id}`)
       },
       {
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/add-volunteer-need-post',
-        element: <AddVolunteerNeedPost></AddVolunteerNeedPost>
+        element: <Private><AddVolunteerNeedPost></AddVolunteerNeedPost></Private>,
       }
     ]
   }
