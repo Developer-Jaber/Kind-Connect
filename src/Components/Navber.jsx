@@ -33,7 +33,7 @@ const Navber = () => {
   const {user} = useContext(AuthContext)
   
   return (
-    <div className='bg-base-100 navbar'>
+    <div className='bg-base-100 mt-5 navbar'>
       <div className='navbar-start'>
         <div className='flex lg:hidden dropdown'>
           <div tabIndex={0} role='button' className='btn btn-circle btn-ghost'>
@@ -59,7 +59,10 @@ const Navber = () => {
             {link}
           </ul>
         </div>
-        <a className='text-xl btn btn-ghost'>Kind Connect</a>
+        <a className='flex items-center gap-3'>
+          <img className='w-14' src="https://i.ibb.co/XZWt25j/icons8-charity-96.png" alt="" />
+          <span className='font-bold text-4xl'>Kind Connect</span>
+        </a>
       </div>
       <div className='lg:flex hidden navbar-center'>
         <ul className='px-1 text-lg menu menu-horizontal'>{link}</ul>

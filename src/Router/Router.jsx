@@ -5,6 +5,7 @@ import LoginPage from '../Pages/LoginPage'
 import RegisterPage from '../Pages/RegisterPage'
 import Profile from '../Pages/Profile'
 import VolunteerPostsPage from '../Pages/VolunteerPostsPage'
+import Private from '../Private/Private'
 
 const router = createBrowserRouter([
   {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/user-profile',
-        element: <Profile></Profile>
+        element: <Private><Profile></Profile></Private>
       }
     ]
   }
