@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { data, Link } from 'react-router-dom';
 import axios from 'axios';
 import BackToTopButton from '../Components/BackToTopButton ';
 
@@ -43,7 +43,7 @@ const VolunteerPostsPage = () => {
               <p><strong>Category:</strong> {post.category}</p>
               <p><strong>Location:</strong> {post.location}</p>
               <div className="justify-end card-actions">
-                <Link to={`/volunteer/${index}`} className="btn btn-primary">View Details</Link>
+                <Link to={`/all-volentiar-need-Post/details/${post._id}`} className="btn btn-primary">View Details</Link>
               </div>
             </div>
           </div>

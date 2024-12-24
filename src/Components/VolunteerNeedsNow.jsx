@@ -50,7 +50,7 @@ const VolunteerNeedsNow = () => {
                 {new Date(post.deadline).toLocaleDateString()}
               </p>
               <div className='justify-end card-actions'>
-                <Link to={`/volunteer/${index}`} className='btn btn-primary'>
+                <Link to={`/all-volentiar-need-Post/details/${post._id}`} className='btn btn-primary'>
                   View Details
                 </Link>
               </div>
