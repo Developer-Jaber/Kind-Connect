@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { AuthContext } from '../Provider/AuthProvider'
 
 const Navber = () => {
+  const {user} = useContext(AuthContext)
   const link = (
     <>
       <li>
@@ -16,21 +17,19 @@ const Navber = () => {
           <summary>My Profile</summary>
           <ul className='p-2 w-72'>
             <li>
-              <Link>Add Volunteer need Post</Link>
+              <Link to='/add-volunteer-need-post'>Add volunteer need post</Link>
             </li>
             <li>
               <Link>Manage My Posts</Link>
             </li>
-            <li>
+            {user && (<li>
               <Link to='/user-profile'>Profile</Link>
-            </li>
+            </li>)}
           </ul>
         </details>
       </li>
     </>
   )
-
-  const {user} = useContext(AuthContext)
   
   return (
     <div className='bg-base-100 mt-5 navbar'>

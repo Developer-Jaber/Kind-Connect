@@ -7,6 +7,7 @@ import Profile from '../Pages/Profile'
 import VolunteerPostsPage from '../Pages/VolunteerPostsPage'
 import Private from '../Private/Private'
 import ErrorPage from '../Error/ErrorPage'
+import AddVolunteerNeedPost from '../Pages/AddVolunteerNeedPost '
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: '/user-profile',
         element: <Private><Profile></Profile></Private>
+      },
+      {
+        path: '/add-volunteer-need-post',
+        element: <AddVolunteerNeedPost></AddVolunteerNeedPost>
       }
     ]
   }
