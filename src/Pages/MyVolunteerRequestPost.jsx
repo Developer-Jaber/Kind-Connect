@@ -68,17 +68,11 @@ const MyVolunteerRequestPost = () => {
                     <td>{post.postTitle}</td>
                     <td>{post.description}</td>
                     <td>
-                      <Link
-                        to={`/update-volunteer-need-post/${post._id}`}
-                        className='mr-2 btn btn-primary btn-sm'
-                      >
-                        <FiEdit />
-                      </Link>
                       <button
                         className='btn btn-error btn-sm'
                         onClick={() => handleDelete(post.volunteerEmail)}
                       >
-                        <FiTrash2 />
+                        Cancel
                       </button>
                     </td>
                   </tr>
