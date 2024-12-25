@@ -3,6 +3,7 @@ import { useLoaderData, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { AuthContext } from '../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const VolunteerNeedPostDetails = () => {
   const {user} = useContext(AuthContext);
@@ -18,16 +19,27 @@ const VolunteerNeedPostDetails = () => {
   const onSubmit = data => {
     axios.post('http://localhost:5000/volenteers-request', { ...data, status: 'requested' })
     .then(() => {
+      if(post.volunteersNeeded > 0){
       return axios.patch(`http://localhost:5000/all-posts/${post._id}`, { $inc: { volunteersNeeded: -1 } });
+      }
     })
     .then(() => {
-      console.log(data);
       setModalIsOpen(false);
+      if(post.volunteersNeeded <= 0){
+        Swal.fire({
+          position: "top-center",
+          icon: "error",
+          title: "Thanks for choseeing us,No need to more.",
+          showConfirmButton: false,
+          timer: 2000
+        });
+      }
       navigate('/')
     })
     .catch(error => {
       console.error('Error submitting volunteer request:', error);
     });
+    
   };
 
   return (
@@ -71,7 +83,7 @@ const VolunteerNeedPostDetails = () => {
                 <label className="block font-medium text-sm">Post Title</label>
                 <input
                   type="text"
-                  {...register('title')}
+                  {...register('postTitle')}
                   className="border-gray-300 p-2 border rounded w-full"
                   defaultValue={post.postTitle}
                   readOnly
