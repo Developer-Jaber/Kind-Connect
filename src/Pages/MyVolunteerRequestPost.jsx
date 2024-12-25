@@ -4,41 +4,52 @@ import { AuthContext } from '../Provider/AuthProvider'
 import { FiEdit, FiTrash2 } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
 
-const MyVolunteerNeedPosts = () => {
-  const [volunteerNeedPosts, setVolunteerNeedPosts] = useState([])
+const MyVolunteerRequestPost = () => {
+  const [volunteerRequestPosts, setVolunteerRequestPosts] = useState([])
   const { user } = useContext(AuthContext)
   const email = user.email
 
   useEffect(() => {
     const fetchData = async () => {
       const needPostsResponse = await axios.get(
-        `http://localhost:5000/all-posts/email/${email}`
+        `http://localhost:5000/volenteers-request/email/${email}`
       )
-      setVolunteerNeedPosts(needPostsResponse.data)
+      setVolunteerRequestPosts(needPostsResponse.data)
     }
 
     fetchData()
   }, [email])
 
   const handleDelete = async email => {
-    await axios.delete(`http://localhost:5000/all-posts/email/${email}`)
+    await axios.delete(
+      `http://localhost:5000/volenteers-request/email/${email}`
+    )
     // Refresh the data after delete
     const needPostsResponse = await axios.get(
-      `http://localhost:5000/all-posts/email/${email}`
+      `http://localhost:5000/volenteers-request/email/${email}`
     )
-    setVolunteerNeedPosts(needPostsResponse.data)
+    setVolunteerRequestPosts(needPostsResponse.data)
   }
 
-  return ( 
+  return (
     <div>
       <div className='mx-auto py-10 container'>
         <h1 className='mb-8 font-bold text-3xl text-center'>
-          My Volunteer Need Posts
+          My Volunteer Request Posts
         </h1>
-        {volunteerNeedPosts.length === 0 ? (
-          <p className='text-center text-lg'>
-            You have not added any volunteer need posts yet.
-          </p>
+        {volunteerRequestPosts.length === 0 ? (
+          <div className='bg-white shadow-md p-6 rounded-lg min-h-screen text-center'>
+            <h2 className='mb-4 font-semibold text-2xl'>
+              No Volunteer Request Posts
+            </h2>
+            <p className='my-10 text-gray-700'>
+              You have not added any volunteer request posts yet. Click the button
+              below to add your first post.
+            </p>
+            <Link to='/all-volentiar-need-Post' className='bg-blue-500 hover:bg-blue-600 shadow-lg px-4 py-2 rounded font-semibold text-white transition duration-300'>
+              Add Volunteer Need Post
+            </Link>
+          </div>
         ) : (
           <div className='overflow-x-auto'>
             <table className='w-full table'>
@@ -51,13 +62,13 @@ const MyVolunteerNeedPosts = () => {
                 </tr>
               </thead>
               <tbody>
-                {volunteerNeedPosts.map((post, index) => (
+                {volunteerRequestPosts.map((post, index) => (
                   <tr key={post._id}>
                     <td>{index + 1}</td>
                     <td>{post.postTitle}</td>
                     <td>{post.description}</td>
                     <td>
-                      <Link 
+                      <Link
                         to={`/update-volunteer-need-post/${post._id}`}
                         className='mr-2 btn btn-primary btn-sm'
                       >
@@ -65,7 +76,7 @@ const MyVolunteerNeedPosts = () => {
                       </Link>
                       <button
                         className='btn btn-error btn-sm'
-                        onClick={() => handleDelete(post.organizerEmail)}
+                        onClick={() => handleDelete(post.volunteerEmail)}
                       >
                         <FiTrash2 />
                       </button>
@@ -81,4 +92,4 @@ const MyVolunteerNeedPosts = () => {
   )
 }
 
-export default MyVolunteerNeedPosts
+export default MyVolunteerRequestPost

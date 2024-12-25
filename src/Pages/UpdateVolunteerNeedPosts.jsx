@@ -11,12 +11,7 @@ const UpdateVolunteerNeedPosts = () => {
 
   const post = useLoaderData()
 
-//   const handleUpdate = async id => {
-    //   await axios.patch(`http://localhost:5000/all-posts/email/${email}`, updatedData);
-    //   // Refresh the data after update
-    //   const needPostsResponse = await axios.get(`/my-posts/${user.email}`);
-    //   setVolunteerNeedPosts(needPostsResponse.data);
-//   }
+
   // submit updated data
   const onSubmit = data => {
     const id = post._id;
