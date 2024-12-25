@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { AuthContext } from '../Provider/AuthProvider'
 
 const Navber = () => {
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext)
   const link = (
     <>
       <li>
@@ -13,24 +13,26 @@ const Navber = () => {
         <Link to='all-volentiar-need-Post'>All volunteer Need posts</Link>
       </li>
       <li>
-        <details>
-          <summary>My Profile</summary>
-          <ul className='p-2 w-72'>
-            <li>
-              <Link to='/add-volunteer-need-post'>Add volunteer need post</Link>
-            </li>
-            <li>
-              <Link>Manage My Posts</Link>
-            </li>
-            {user && (<li>
-              <Link to='/user-profile'>Profile</Link>
-            </li>)}
-          </ul>
-        </details>
+        <Link to='/add-volunteer-need-post'>Add volunteer Need post</Link>
       </li>
+      {user && (
+        <li>
+          <details>
+            <summary>Manage My Posts</summary>
+            <ul className='p-2 w-72'>
+              <li>
+                <Link to='/my-volunteer-need-posts'>My Volunteer Need Post</Link>
+              </li>
+              <li>
+                <Link to='/'>My Volunteer Request Post</Link>
+              </li>
+            </ul>
+          </details>
+        </li>
+      )}
     </>
   )
-  
+
   return (
     <div className='bg-base-100 mt-5 navbar'>
       <div className='navbar-start'>
@@ -59,7 +61,11 @@ const Navber = () => {
           </ul>
         </div>
         <a className='flex items-center gap-3'>
-          <img className='w-14' src="https://i.ibb.co/XZWt25j/icons8-charity-96.png" alt="" />
+          <img
+            className='w-14'
+            src='https://i.ibb.co/XZWt25j/icons8-charity-96.png'
+            alt=''
+          />
           <span className='font-bold text-4xl'>Kind Connect</span>
         </a>
       </div>
@@ -102,19 +108,23 @@ const Navber = () => {
             <span className='badge badge-primary badge-xs indicator-item'></span>
           </div>
         </button>
-        <Link to='/login'>
-          {
-            user && user?.email ? (<img
+        {user && user?.email ? (
+          <Link to='/user-profile'>
+            <img
               className='rounded-full w-12 cursor-pointer'
               src={user.photoURL}
               alt={user && user?.displayName}
-            />) : (<img
+            />
+          </Link>
+        ) : (
+          <Link to='/login'>
+            <img
               className='w-12'
               src='https://img.icons8.com/?size=100&id=HmQQr0jYHZxu&format=png&color=000000'
               alt=''
-            />)
-          }
-        </Link>
+            />
+          </Link>
+        )}
       </div>
     </div>
   )

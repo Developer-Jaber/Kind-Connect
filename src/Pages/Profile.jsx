@@ -6,15 +6,15 @@ import { Navigate, useNavigate } from 'react-router-dom';
 
 const Profile = () => {
     const {user, userLogOut} = useContext(AuthContext);
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const handleLogOutUser = () => {
         userLogOut()
         .then(()=>{
             console.log('sign out succesfull...!');
-            // navigate('/home')
-            <Navigate to='/'></Navigate>
+            // navigate('/')
         })
+        navigate('/')
     }
   return (
     <div className='flex justify-center items-center bg-gray-100 min-h-screen'>

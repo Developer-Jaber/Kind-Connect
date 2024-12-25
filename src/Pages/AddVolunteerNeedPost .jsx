@@ -4,6 +4,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { AuthContext } from '../Provider/AuthProvider';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const AddVolunteerNeedPost = () => {
   const {user} = useContext(AuthContext)
@@ -12,11 +13,16 @@ const AddVolunteerNeedPost = () => {
 
   const onSubmit = data => {
     data.deadline = deadline;
-    console.log(data);
     // sending data to the server
     axios.post('http://localhost:5000/all-posts',data)
     .then(()=>{
-        console.log('Successfully submitted the post!');
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: "Successfully submitted the post!",
+          showConfirmButton: false,
+          timer: 1500
+        });
     })
     .catch((err)=>{
         console.log(err);
@@ -120,7 +126,7 @@ const AddVolunteerNeedPost = () => {
           <input
             type="email"
             value={user?.email}
-            {...register('email')}
+            {...register('organizerEmail')}
             readOnly
             className="border-gray-300 p-2 border rounded w-full"
           />

@@ -9,6 +9,8 @@ import Private from '../Private/Private'
 import ErrorPage from '../Error/ErrorPage'
 import AddVolunteerNeedPost from '../Pages/AddVolunteerNeedPost '
 import VolentiarNeedPostDetails from '../Pages/VolentiarNeedPostDetails'
+import MyVolunteerNeedPosts from '../Pages/MyVolunteerNeedPosts'
+import UpdateVolunteerNeedPosts from '../Pages/UpdateVolunteerNeedPosts'
 
 const router = createBrowserRouter([
   {
@@ -44,6 +46,15 @@ const router = createBrowserRouter([
       {
         path: '/add-volunteer-need-post',
         element: <Private><AddVolunteerNeedPost></AddVolunteerNeedPost></Private>,
+      },
+      {
+        path: '/my-volunteer-need-posts',
+        element: <Private><MyVolunteerNeedPosts></MyVolunteerNeedPosts></Private>
+      },
+      {
+        path: '/update-volunteer-need-post/:id',
+        element: <Private><UpdateVolunteerNeedPosts></UpdateVolunteerNeedPosts></Private>,
+        loader: ({params})=> fetch(`http://localhost:5000/all-posts/${params.id}`)
       }
     ]
   }

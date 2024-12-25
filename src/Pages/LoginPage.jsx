@@ -1,12 +1,12 @@
 import { useContext } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../Provider/AuthProvider'
 import axios from 'axios'
 
 const LoginPage = () => {
   const { loginWithGoogle, loginUser,user, setUser } = useContext(AuthContext)
   const location = useLocation();
-  console.log(location);
+  const navigate = useNavigate()
 
   const handleLoginUser = e => {
     e.preventDefault()
@@ -38,10 +38,12 @@ const LoginPage = () => {
         .catch((error)=>{
           console.log(error);
         })
+        navigate('/')
       })
       .catch(error => {
         console.log(error)
       })
+      
   }
   return (
     <div className='flex justify-center items-center bg-gray-100 min-h-screen'>
