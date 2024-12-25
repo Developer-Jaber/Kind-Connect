@@ -1,9 +1,32 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AuthContext } from '../Provider/AuthProvider'
+import { FaMoon, FaSun } from 'react-icons/fa'
 
 const Navber = () => {
   const { user } = useContext(AuthContext)
+
+  // for dark & light them
+  const [theme, setTheme] = useState('light')
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme) {
+      setTheme(savedTheme)
+      document.documentElement.setAttribute('data-theme', savedTheme)
+    } else {
+      setTheme('light')
+      document.documentElement.setAttribute('data-theme', 'light')
+    }
+  }, [])
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light'
+    setTheme(newTheme)
+    document.documentElement.setAttribute('data-theme', newTheme)
+    localStorage.setItem('theme', newTheme)
+  }
+
   const link = (
     <>
       <li>
@@ -21,10 +44,14 @@ const Navber = () => {
             <summary>Manage My Posts</summary>
             <ul className='p-2 w-72'>
               <li>
-                <Link to='/my-volunteer-need-posts'>My Volunteer Need Post</Link>
+                <Link to='/my-volunteer-need-posts'>
+                  My Volunteer Need Post
+                </Link>
               </li>
               <li>
-                <Link to='/my-volunteer-request-posts'>My Volunteer Request Post</Link>
+                <Link to='/my-volunteer-request-posts'>
+                  My Volunteer Request Post
+                </Link>
               </li>
             </ul>
           </details>
@@ -73,21 +100,11 @@ const Navber = () => {
         <ul className='px-1 text-lg menu menu-horizontal'>{link}</ul>
       </div>
       <div className='gap-4 navbar-end'>
-        <button className='btn btn-circle btn-ghost'>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            className='w-5 h-5'
-            fill='none'
-            viewBox='0 0 24 24'
-            stroke='currentColor'
-          >
-            <path
-              strokeLinecap='round'
-              strokeLinejoin='round'
-              strokeWidth='2'
-              d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
-            />
-          </svg>
+        <button
+          onClick={toggleTheme}
+          className='bg-primary p-2 rounded-full text-primary-content'
+        >
+          {theme === 'light' ? <FaMoon size={20} /> : <FaSun size={20} />}
         </button>
         <button className='btn btn-circle btn-ghost'>
           <div className='indicator'>
