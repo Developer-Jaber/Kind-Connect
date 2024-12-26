@@ -1,4 +1,4 @@
-// components/VolunteerNeedsNow.js
+
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -6,7 +6,7 @@ const VolunteerNeedsNow = () => {
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/volunteer-needs-now')
+    fetch('https://b10a11-server-side-developer-jaber.vercel.app/volunteer-needs-now')
       .then(res => res.json())
       .then(data => setPosts(data))
   }, [])

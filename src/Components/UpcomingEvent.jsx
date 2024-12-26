@@ -4,10 +4,11 @@ const UpcomingEvent = () => {
   const [events, setEvents] = useState([])
 
   useEffect(() => {
-    fetch('http://localhost:5000/upcoming-events')
+    fetch('https://b10a11-server-side-developer-jaber.vercel.app/upcoming-events')
       .then(res => res.json())
       .then(data => setEvents(data))
   }, [])
+  console.log(events);
   return (
     <section className='mx-auto py-10 w-11/12'>
       <div className='my-10 hero'>

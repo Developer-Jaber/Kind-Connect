@@ -14,7 +14,7 @@ const AddVolunteerNeedPost = () => {
   const onSubmit = data => {
     data.deadline = deadline;
     // sending data to the server
-    axios.post('http://localhost:5000/all-posts',data)
+    axios.post('https://b10a11-server-side-developer-jaber.vercel.app/all-posts',data)
     .then(()=>{
         Swal.fire({
           position: "top-center",

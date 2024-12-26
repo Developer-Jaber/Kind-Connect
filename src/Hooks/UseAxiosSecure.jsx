@@ -4,7 +4,7 @@ import { AuthContext } from '../Provider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://b10a11-server-side-developer-jaber.vercel.app',
     withCredentials: true
 })
 

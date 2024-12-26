@@ -10,7 +10,7 @@ const VolunteerPostsPage = () => {
   ]);
 
   useEffect(()=>{
-    fetch('http://localhost:5000/all-posts')
+    fetch('https://b10a11-server-side-developer-jaber.vercel.app/all-posts')
     .then(res=>res.json())
     .then(data=>setPosts(data))
   },[])

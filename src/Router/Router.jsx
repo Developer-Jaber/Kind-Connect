@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: '/all-volentiar-need-Post/details/:id',
         element: <Private><VolentiarNeedPostDetails></VolentiarNeedPostDetails></Private>,
-        loader: ({params})=>fetch(`http://localhost:5000/all-posts/${params.id}`)
+        loader: ({params})=>fetch(`https://b10a11-server-side-developer-jaber.vercel.app/all-posts/${params.id}`)
       },
       {
         path: '/login',
@@ -55,7 +55,7 @@ const router = createBrowserRouter([
       {
         path: '/update-volunteer-need-post/:id',
         element: <Private><UpdateVolunteerNeedPosts></UpdateVolunteerNeedPosts></Private>,
-        loader: ({params})=> fetch(`http://localhost:5000/all-posts/${params.id}`)
+        loader: ({params})=> fetch(`https://b10a11-server-side-developer-jaber.vercel.app/all-posts/${params.id}`)
       },
       {
         path: '/my-volunteer-request-posts',

@@ -17,10 +17,10 @@ const VolunteerNeedPostDetails = () => {
   };
 
   const onSubmit = data => {
-    axios.post('http://localhost:5000/volenteers-request', { ...data, status: 'requested' })
+    axios.post('https://b10a11-server-side-developer-jaber.vercel.app/volenteers-request', { ...data, status: 'requested' })
     .then(() => {
       if(post.volunteersNeeded > 0){
-      return axios.patch(`http://localhost:5000/all-posts/${post._id}`, { $inc: { volunteersNeeded: -1 } });
+      return axios.patch(`https://b10a11-server-side-developer-jaber.vercel.app/all-posts/${post._id}`, { $inc: { volunteersNeeded: -1 } });
       }
     })
     .then(() => {

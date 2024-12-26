@@ -31,7 +31,7 @@ const LoginPage = () => {
       .then(result => {
         const newUser = result.user
         setUser(newUser)
-        axios.post('http://localhost:5000/users',newUser)
+        axios.post('https://b10a11-server-side-developer-jaber.vercel.app/users',newUser)
         .then((data)=>{
           console.log(data);
         })

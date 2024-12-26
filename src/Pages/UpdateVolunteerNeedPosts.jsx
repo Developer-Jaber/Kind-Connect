@@ -15,7 +15,7 @@ const UpdateVolunteerNeedPosts = () => {
   // submit updated data
   const onSubmit = data => {
     const id = post._id;
-   fetch(`http://localhost:5000/all-posts/${id}`,{
+   fetch(`https://b10a11-server-side-developer-jaber.vercel.app/all-posts/${id}`,{
     method: 'PUT',
     headers: {
       'content-type': 'application/json'
