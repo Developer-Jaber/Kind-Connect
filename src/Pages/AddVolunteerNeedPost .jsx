@@ -116,7 +116,7 @@ const AddVolunteerNeedPost = () => {
           <input
             type="text"
             value={user?.displayName}
-            {...register('displayName')}
+            {...register('organizerName')}
             readOnly
             className="border-gray-300 p-2 border rounded w-full"
           />

@@ -53,6 +53,9 @@ const Navber = () => {
                   My Volunteer Request Post
                 </Link>
               </li>
+              <li>
+                <Link to='/user-profile'>Profile</Link>
+              </li>
             </ul>
           </details>
         </li>
