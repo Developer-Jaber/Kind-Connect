@@ -6,10 +6,10 @@ import { useNavigate } from 'react-router-dom';
 const axiosInstance = axios.create({
     baseURL: 'https://b10a11-server-side-developer-jaber.vercel.app',
     withCredentials: true
-})
+});
 
 
-const UseAxiosSecure = () => {
+const useAxiosSecure = () => {
     const {userLogOut} = useContext(AuthContext);
     const navigate = useNavigate();
     useEffect(()=>{
@@ -22,9 +22,9 @@ const UseAxiosSecure = () => {
                 userLogOut()
                 .then(()=>{
                     console.log('loged out user');
-                    navigate('/login')
+                    navigate('/login');
                 })
-                .catch(err=>console.log(err))
+                .catch(err=>console.log(err));
             }
 
             return Promise.reject(error);
@@ -34,4 +34,4 @@ const UseAxiosSecure = () => {
     return axiosInstance;
 };
 
-export default UseAxiosSecure;
+export default useAxiosSecure;

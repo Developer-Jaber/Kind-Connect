@@ -2,23 +2,28 @@ import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { AuthContext } from '../Provider/AuthProvider'
 import { Link } from 'react-router-dom'
+import useAxiosSecure from '../Hooks/useAxiosSecure'
 
 const MyVolunteerRequestPost = () => {
   const [volunteerRequestPosts, setVolunteerRequestPosts] = useState([])
   const { user } = useContext(AuthContext)
   const email = user.email
+  const axiosSecure = useAxiosSecure();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const needPostsResponse = await axios.get(
-        `https://b10a11-server-side-developer-jaber.vercel.app/volenteers-request/email/${email}`
-      )
-      setVolunteerRequestPosts(needPostsResponse.data)
-    }
+    // const fetchData = async () => {
+    //   const needPostsResponse = await axios.get(
+    //     `https://b10a11-server-side-developer-jaber.vercel.app/volenteers-request/email/${email}`
+    //   )
+    //   setVolunteerRequestPosts(needPostsResponse.data)
+    // }
 
-    fetchData()
+    // fetchData()
+    axiosSecure.get(`/volenteers-request/email/${email}`)
+    .then(res=>setVolunteerRequestPosts(res.data));
   }, [email])
 
+  console.log(email);
   const handleDelete = async email => {
     await axios.delete(
       `https://b10a11-server-side-developer-jaber.vercel.app/volenteers-request/email/${email}`

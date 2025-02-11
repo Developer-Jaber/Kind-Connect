@@ -36,26 +36,32 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, currentUser => {
       setUser(currentUser)
-      console.log('state captured', currentUser)
 
       if (currentUser?.email) {
         const user = { email: currentUser.email }
 
         axios
-          .post('https://b10a11-server-side-developer-jaber.vercel.app/jwt', user, { withCredentials: true })
+          .post(
+            'https://b10a11-server-side-developer-jaber.vercel.app/jwt',
+            user,
+            { withCredentials: true }
+          )
           .then(res => {
             console.log('signin', res.data)
             setLoder(false)
           })
       } else {
         axios
-          .post('https://b10a11-server-side-developer-jaber.vercel.app/logout', {}, { withCredentials: true })
+          .post(
+            'https://b10a11-server-side-developer-jaber.vercel.app/logout',
+            {},
+            { withCredentials: true }
+          )
           .then(res => {
             console.log('logout', res.data)
             setLoder(false)
           })
       }
-      
     })
     return () => {
       unSubscribe()

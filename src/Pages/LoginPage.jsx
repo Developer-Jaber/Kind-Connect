@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../Provider/AuthProvider'
 import axios from 'axios'
+import Swal from 'sweetalert2'
 
 const LoginPage = () => {
   const { loginWithGoogle, loginUser,user, setUser } = useContext(AuthContext)
@@ -19,10 +20,22 @@ const LoginPage = () => {
       .then(data => {
         const user = data.user;
         setUser(user)
-        console.log(user)
+        Swal.fire({
+          position: "top-center",
+          icon: "success",
+          title: "You are successfully loged in..!",
+          showConfirmButton: false,
+          timer: 1500
+        });
       })
       .catch(error => {
-        console.log(error)
+        Swal.fire({
+          position: "top-center",
+          icon: "error",
+          title: "Somthing went wrong..!",
+          showConfirmButton: false,
+          timer: 1500
+        });
       })
   }
 
@@ -32,11 +45,23 @@ const LoginPage = () => {
         const newUser = result.user
         setUser(newUser)
         axios.post('https://b10a11-server-side-developer-jaber.vercel.app/users',newUser)
-        .then((data)=>{
-          console.log(data);
+        .then(()=>{
+          Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500
+          });
         })
-        .catch((error)=>{
-          console.log(error);
+        .catch(()=>{
+          Swal.fire({
+            position: "top-center",
+            icon: "error",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500
+          });
         })
         navigate('/')
       })

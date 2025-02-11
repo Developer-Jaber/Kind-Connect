@@ -8,7 +8,7 @@ const UpcomingEvent = () => {
       .then(res => res.json())
       .then(data => setEvents(data))
   }, [])
-  console.log(events);
+  
   return (
     <section className='mx-auto py-10 w-11/12'>
       <div className='my-10 hero'>

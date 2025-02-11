@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { AuthContext } from '../Provider/AuthProvider'
 import { FaGithub, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import { Navigate, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 
 const Profile = () => {
@@ -11,7 +12,13 @@ const Profile = () => {
     const handleLogOutUser = () => {
         userLogOut()
         .then(()=>{
-            console.log('sign out succesfull...!');
+          Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Your work has been saved",
+            showConfirmButton: false,
+            timer: 1500
+          });
             // navigate('/')
         })
         navigate('/')

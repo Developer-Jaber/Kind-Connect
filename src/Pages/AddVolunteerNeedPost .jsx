@@ -24,8 +24,14 @@ const AddVolunteerNeedPost = () => {
           timer: 1500
         });
     })
-    .catch((err)=>{
-        console.log(err);
+    .catch(()=>{
+      Swal.fire({
+        position: "top-center",
+        icon: "error",
+        title: "Somthing went wrong..",
+        showConfirmButton: false,
+        timer: 1500
+      });
     })
 
     // Reset the form fields after successful submission

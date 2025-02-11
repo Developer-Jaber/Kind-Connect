@@ -3,23 +3,27 @@ import axios from 'axios'
 import { AuthContext } from '../Provider/AuthProvider'
 import { FiEdit, FiTrash2 } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
-import UseAxiosSecure from '../Hooks/UseAxiosSecure'
+import useAxiosSecure from '../Hooks/useAxiosSecure'
+
 
 const MyVolunteerNeedPosts = () => {
   const [volunteerNeedPosts, setVolunteerNeedPosts] = useState([])
   const { user } = useContext(AuthContext)
   const email = user.email
-  const axiosSecure = UseAxiosSecure();
+  const axiosSecure = useAxiosSecure();
 
   
+  
   useEffect(() => {
-    const fetchData = async () => {
-      const needPostsResponse = await axiosSecure.get(
-        `/all-posts/email/${email}`
-      )
-      setVolunteerNeedPosts(needPostsResponse.data)
-    }
-    fetchData()
+    // const fetchData = async () => {
+    //   const needPostsResponse = await axios.get(
+    //     `/all-posts/email/${email}`,{withCredentials:true}
+    //   )
+    //   setVolunteerNeedPosts(needPostsResponse.data)
+    // }
+    // fetchData()
+    axiosSecure.get(`/all-posts/email/${email}`)
+    .then(res=> setVolunteerNeedPosts(res.data));
     
   }, [email])
 
