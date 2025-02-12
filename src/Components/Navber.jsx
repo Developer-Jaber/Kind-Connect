@@ -1,13 +1,32 @@
 import { useContext, useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { AuthContext } from '../Provider/AuthProvider'
 import { FaMoon, FaSun } from 'react-icons/fa'
 
 const Navber = () => {
-  const { user } = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
+  const location = useLocation();
+
+  // for scroll behaviour of navber
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   // for dark & light them
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme')
@@ -64,9 +83,11 @@ const Navber = () => {
   )
 
   return (
-    <div className='bg-base-100 mt-5 navbar'>
+    <div className={`w-full transition-all duration-300 navbar  ${
+      scrolled ? "bg-[#E8F3F8] shadow-md fixed top-0 left-0 z-50 px-20" : "bg-transparent"
+    }`}>
       <div className='navbar-start'>
-        <div className='flex lg:hidden dropdown'>
+        <div className='lg:hidden flex dropdown'>
           <div tabIndex={0} role='button' className='btn btn-circle btn-ghost'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -99,7 +120,7 @@ const Navber = () => {
           <span className='font-bold text-4xl'>Kind Connect</span>
         </a>
       </div>
-      <div className='lg:flex hidden navbar-center'>
+      <div className='hidden lg:flex navbar-center'>
         <ul className='px-1 text-lg menu menu-horizontal'>{link}</ul>
       </div>
       <div className='gap-4 navbar-end'>

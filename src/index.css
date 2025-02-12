@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+Link.active{
+    background-color: #93B3FC;
+}
