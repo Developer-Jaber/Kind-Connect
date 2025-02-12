@@ -50,7 +50,7 @@ const VolunteerNeedsNow = () => {
                 {new Date(post.deadline).toLocaleDateString()}
               </p>
               <div className='justify-end card-actions'>
-                <Link to={`/all-volentiar-need-Post/details/${post._id}`} className='btn btn-primary'>
+                <Link to={`/all-volentiar-need-Post/details/${post._id}`} className='bg-[#98BDFE] font-bold text-lg btn'>
                   View Details
                 </Link>
               </div>
@@ -59,7 +59,7 @@ const VolunteerNeedsNow = () => {
         ))}
       </div>
       <div className='flex justify-center my-20'>
-        <Link to='/all-volentiar-need-Post' className='px-10 btn btn-primary'>
+        <Link to='/all-volentiar-need-Post' className='bg-[#98BDFE] px-10 font-bold text-xl btn'>
           See all
         </Link>
       </div>

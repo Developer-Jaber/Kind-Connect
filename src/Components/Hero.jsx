@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import Carousel from "./Carousel"
 
 const Hero = () => {
@@ -16,7 +17,7 @@ const Hero = () => {
                 community, and find the perfect opportunities to give back.
                 Let's build a stronger, more connected world together.
               </p>
-              <button className='btn btn-primary'>Get Started</button>
+              <Link to="/signup" className='bg-[#98BDFE] font-bold text-xl btn'>Get Started</Link>
             </div>
           </div>
         </div>
