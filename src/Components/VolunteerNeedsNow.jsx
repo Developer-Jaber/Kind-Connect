@@ -58,7 +58,7 @@ const VolunteerNeedsNow = () => {
           </div>
         ))}
       </div>
-      <div className='flex justify-center my-20'>
+      <div className='flex justify-center mt-16'>
         <Link to='/all-volentiar-need-Post' className='bg-[#98BDFE] px-10 font-bold text-xl btn'>
           See all
         </Link>

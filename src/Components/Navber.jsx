@@ -4,29 +4,29 @@ import { AuthContext } from '../Provider/AuthProvider'
 import { FaMoon, FaSun } from 'react-icons/fa'
 
 const Navber = () => {
-  const { user } = useContext(AuthContext);
-  const location = useLocation();
+  const { user } = useContext(AuthContext)
+  const location = useLocation()
 
   // for scroll behaviour of navber
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false)
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setScrolled(true);
+        setScrolled(true)
       } else {
-        setScrolled(false);
+        setScrolled(false)
       }
-    };
+    }
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll)
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   // for dark & light them
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('light')
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme')
@@ -83,9 +83,13 @@ const Navber = () => {
   )
 
   return (
-    <div className={`w-full transition-all duration-300 navbar  ${
-      scrolled ? "bg-[#E8F3F8] shadow-md fixed top-0 left-0 z-50 px-20" : "bg-transparent"
-    }`}>
+    <div
+      className={`w-12/12 transition-all duration-300 navbar  ${
+        scrolled
+          ? 'bg-[#E8F3F8] shadow-md fixed top-0 left-0 z-50 px-5 lg:px-20'
+          : 'bg-transparent'
+      }`}
+    >
       <div className='navbar-start'>
         <div className='lg:hidden flex dropdown'>
           <div tabIndex={0} role='button' className='btn btn-circle btn-ghost'>
@@ -111,13 +115,13 @@ const Navber = () => {
             {link}
           </ul>
         </div>
-        <a className='flex items-center gap-3'>
+        <a className='flex items-center gap-3 w-5 lg:w-20'>
           <img
             className='w-14'
             src='https://i.ibb.co/XZWt25j/icons8-charity-96.png'
             alt=''
           />
-          <span className='font-bold text-4xl'>Kind Connect</span>
+          <span className='font-bold text-xl lg:text-4xl'>Kind Connect</span>
         </a>
       </div>
       <div className='hidden lg:flex navbar-center'>
@@ -126,11 +130,11 @@ const Navber = () => {
       <div className='gap-4 navbar-end'>
         <button
           onClick={toggleTheme}
-          className='bg-primary p-2 rounded-full text-primary-content'
+          className='hidden lg:flex bg-primary p-2 rounded-full text-primary-content'
         >
           {theme === 'light' ? <FaMoon size={20} /> : <FaSun size={20} />}
         </button>
-        <button className='btn btn-circle btn-ghost'>
+        <button className='hidden lg:flex btn btn-circle btn-ghost'>
           <div className='indicator'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -152,7 +156,7 @@ const Navber = () => {
         {user && user?.email ? (
           <Link to='/user-profile'>
             <img
-              className='rounded-full w-12 cursor-pointer'
+              className='rounded-full w-8 lg:w-12 cursor-pointer'
               src={user.photoURL}
               alt={user && user?.displayName}
             />
