@@ -11,7 +11,7 @@ const SuccessStory = () => {
 
   return (
     <section>
-      <div className='my-10 hero'>
+      <div className='hero'>
         <div className='text-center hero-content'>
           <div className='max-w-2xl'>
             <h1 className='font-bold text-4xl'>Success Stories</h1>

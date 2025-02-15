@@ -43,7 +43,7 @@ const VolunteerPostsPage = () => {
               <p><strong>Category:</strong> {post.category}</p>
               <p><strong>Location:</strong> {post.location}</p>
               <div className="justify-end card-actions">
-                <Link to={`/all-volentiar-need-Post/details/${post._id}`} className="btn btn-primary">View Details</Link>
+                <Link to={`/all-volentiar-need-Post/details/${post._id}`} className="bg-[#98BDFE] font-bold text-xl btn">View Details</Link>
               </div>
             </div>
           </div>
