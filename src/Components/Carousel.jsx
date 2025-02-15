@@ -9,16 +9,33 @@ import 'swiper/css/scrollbar'
 import '../css/swiper.css'
 
 // import required modules
-import { Scrollbar } from 'swiper/modules'
+import { Autoplay, Scrollbar } from 'swiper/modules'
 
 export default function Carousel () {
+  const swiperRef = useRef(null); // Reference to Swiper instance
+  const [isPlaying, setIsPlaying] = useState(true); // Track autoplay state
+  
+  // Toggle autoplay
+  const toggleAutoplay = () => {
+    if (isPlaying) {
+      swiperRef.current.swiper.autoplay.stop(); // Pause autoplay
+    } else {
+      swiperRef.current.swiper.autoplay.start(); // Resume autoplay
+    }
+    setIsPlaying(!isPlaying); // Update state
+  };
+
+
   return (
     <>
       <Swiper
+      ref={swiperRef}
+      autoplay={{ delay: 5000, disableOnInteraction: false }}
+      loop={true}
         scrollbar={{
           hide: true
         }}
-        modules={[Scrollbar]}
+        modules={[Scrollbar, Autoplay]}
         className='mySwiper'
       >
         
