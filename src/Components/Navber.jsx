@@ -115,13 +115,13 @@ const Navber = () => {
             {link}
           </ul>
         </div>
-        <a className='flex items-center gap-3 w-5 lg:w-20'>
+        <a className='flex items-center gap-3'>
           <img
             className='w-14'
             src='https://i.ibb.co/XZWt25j/icons8-charity-96.png'
             alt=''
           />
-          <span className='font-bold text-xl lg:text-4xl'>Kind Connect</span>
+          <span className='font-bold text-xl lg:text-3xl'>Kind Connect</span>
         </a>
       </div>
       <div className='hidden lg:flex navbar-center'>
