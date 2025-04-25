@@ -4,6 +4,7 @@ import VolunteerNeedsNow from '../Components/VolunteerNeedsNow';
 import UpcomingEvent from '../Components/UpcomingEvent';
 import SuccessStory from '../Components/SuccessStory';
 import BackToTopButton from '../Components/BackToTopButton ';
+import ImpactDashboard from '../Components/ImpactDashboard';
 
 const Home = () => {
     return (
@@ -16,6 +17,9 @@ const Home = () => {
             </section>
             <section>
                 <UpcomingEvent></UpcomingEvent>
+            </section>
+            <section>
+                <ImpactDashboard></ImpactDashboard>
             </section>
             <section>
                 <SuccessStory></SuccessStory>
