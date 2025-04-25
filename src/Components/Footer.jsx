@@ -8,7 +8,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className='bg-gray-900 mt-20 px-20 py-10 text-white'>
+    <footer className='bg-gray-900 px-20 py-10 text-white'>
       <div className='flex md:flex-row flex-col justify-between mx-auto container'>
         <div className='mb-6 md:mb-0'>
           <h2 className='mb-2 font-bold text-2xl'>Kind Connect</h2>

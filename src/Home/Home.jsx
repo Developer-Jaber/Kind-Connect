@@ -5,6 +5,7 @@ import UpcomingEvent from '../Components/UpcomingEvent';
 import SuccessStory from '../Components/SuccessStory';
 import BackToTopButton from '../Components/BackToTopButton ';
 import ImpactDashboard from '../Components/ImpactDashboard';
+import NewsletterSignup from '../Components/NewsletterSignup';
 
 const Home = () => {
     return (
@@ -23,6 +24,9 @@ const Home = () => {
             </section>
             <section>
                 <SuccessStory></SuccessStory>
+            </section>
+            <section>
+                <NewsletterSignup></NewsletterSignup>
             </section>
             <BackToTopButton></BackToTopButton>
         </main>
