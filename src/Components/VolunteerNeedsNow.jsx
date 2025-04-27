@@ -12,14 +12,14 @@ const VolunteerNeedsNow = () => {
   }, [])
 
   return (
-    <div className='mx-auto p-4 container'>
+    <div className='mx-auto my-20 p-4 container'>
       <div className='my-10 hero'>
         <div className='text-center hero-content'>
-          <div className='max-w-2xl'>
-            <h1 className='font-bold text-4xl'>
+          <div className='max-w-4xl'>
+            <h1 className='font-bold text-2xl lg:text-5xl text-center'>
               Urgent Volunteer Opportunities
             </h1>
-            <p className='py-6'>
+            <p className='py-8 text-lg text-center'>
               "Make a Difference Today! Discover volunteer opportunities with
               upcoming deadlines and join hands to support crucial causes. Each
               post highlights a pressing need in healthcare, education, social
