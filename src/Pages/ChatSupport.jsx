@@ -46,9 +46,18 @@ const ChatSupport = () => {
   };
 
   const getAIResponse = async (message) => {
-    // In a real implementation, you would call your backend API here
-    // For now, we'll use a simple mock response
-    return mockAIResponse(message);
+    const response = await fetch('http://localhost:5000/api/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ message }),
+    });
+    
+    if (!response.ok) throw new Error('Network response was not ok');
+    
+    const data = await response.json();
+    return data.response;
   };
 
   const mockAIResponse = (message) => {
