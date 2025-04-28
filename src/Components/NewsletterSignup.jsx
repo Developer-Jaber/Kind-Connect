@@ -20,7 +20,7 @@ const NewsletterSignup = () => {
   };
 
   return (
-    <section className="relative bg-gray-50 py-20 overflow-hidden">
+    <section className="relative bg-gray-50 py-28 overflow-hidden">
       {/* Decorative elements */}
       <div className="top-0 left-0 absolute bg-gradient-to-r from-blue-500 to-teal-400 w-full h-1"></div>
       <div className="top-20 -right-20 absolute bg-blue-100 opacity-20 rounded-full w-64 h-64"></div>
@@ -28,13 +28,13 @@ const NewsletterSignup = () => {
       
       <div className="relative mx-auto px-4 max-w-6xl container">
         <div className="mb-16 text-center">
-          <span className="inline-block bg-blue-100 mb-4 px-3 py-1 rounded-full font-medium text-blue-600 text-sm">
+          <span className="inline-block bg-blue-100 mb-4 px-3 py-1 rounded-full font-medium text-blue-600 text-lg">
             Stay Connected
           </span>
-          <h2 className="mb-4 font-bold text-gray-900 text-4xl md:text-5xl">
+          <h2 className="font-bold text-2xl lg:text-5xl text-center">
             Never Miss a Volunteer Opportunity
           </h2>
-          <p className="mx-auto max-w-2xl text-gray-600 text-xl">
+          <p className="mx-auto py-6 max-w-3xl text-lg text-center">
             Join our community of changemakers. Get curated volunteer opportunities delivered weekly.
           </p>
         </div>
