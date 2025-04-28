@@ -16,14 +16,14 @@ const ProcessAndPartners = () => {
       <div className="mx-auto px-4 container">
         {/* How It Works Section */}
         <div className="mb-20 text-center">
-          <h2 className="mb-4 font-bold text-gray-900 text-4xl">
+          <h2 className="font-bold text-2xl lg:text-5xl text-center">
             How It Works
           </h2>
-          <p className="mx-auto mb-12 max-w-2xl text-gray-600 text-xl">
+          <p className="mx-auto py-8 max-w-2xl text-lg text-center">
             Join thousands of volunteers making a difference in just three simple steps
           </p>
           
-          <div className="gap-8 grid grid-cols-1 md:grid-cols-3">
+          <div className="gap-8 grid grid-cols-1 md:grid-cols-3 py-12">
             {/* Step 1 */}
             <div className="bg-white shadow-sm hover:shadow-md p-8 rounded-xl transition-shadow duration-300">
               <div className="flex justify-center items-center bg-blue-100 mx-auto mb-6 rounded-full w-16 h-16">

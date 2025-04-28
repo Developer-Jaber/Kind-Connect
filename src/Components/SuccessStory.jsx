@@ -11,7 +11,7 @@ const SuccessStory = () => {
   }, []);
 
   return (
-    <section className="bg-gray-50 py-16">
+    <section className="py-16">
       <div className="mx-auto px-4 container">
         {/* Section Header */}
         <div className="mb-16 text-center">
