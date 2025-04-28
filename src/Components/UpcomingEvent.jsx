@@ -11,12 +11,12 @@ const UpcomingEvent = () => {
   }, []);
 
   return (
-    <section className="mx-auto py-16 w-11/12 max-w-7xl">
+    <section className="mx-auto pt-16 pb-28 w-11/12 max-w-7xl">
       <div className="mb-16 text-center">
-        <h1 className="bg-clip-text bg-gradient-to-r from-primary to-accent mb-4 font-bold text-transparent text-4xl md:text-5xl">
+        <h1 className="font-bold text-2xl lg:text-5xl text-center">
           Upcoming Events
         </h1>
-        <p className="mx-auto max-w-3xl text-gray-600 text-lg">
+        <p className="mx-auto py-8 max-w-3xl text-lg text-center">
           "Stay updated with our upcoming volunteer events. Join hands with us and be a part of exciting activities and initiatives aimed at making a difference in our community!"
         </p>
       </div>
