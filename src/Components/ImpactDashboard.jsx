@@ -73,11 +73,11 @@ const ImpactDashboard = () => {
       id="impact-dashboard"
     >
       <div className="mx-auto px-4 container">
-        <h2 className="mb-12 font-bold text-3xl text-center">
+        <h2 className="pb-10 font-bold text-2xl lg:text-5xl text-center">
           Our Community Impact
         </h2>
         
-        <div className="gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <div className="gap-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 my-8">
           {/* Volunteers Connected */}
           <div className="bg-white shadow-md hover:shadow-lg p-6 rounded-lg text-center transition-shadow hover:-translate-y-1 duration-300">
             <div className="mb-2 font-bold text-blue-600 text-5xl">
