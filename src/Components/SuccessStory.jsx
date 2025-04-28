@@ -11,14 +11,14 @@ const SuccessStory = () => {
   }, []);
 
   return (
-    <section className="py-16">
+    <section className="py-24">
       <div className="mx-auto px-4 container">
         {/* Section Header */}
         <div className="mb-16 text-center">
-          <h1 className="bg-clip-text bg-gradient-to-r from-primary to-accent mb-4 font-bold text-transparent text-4xl md:text-5xl">
+          <h1 className="font-bold text-2xl lg:text-5xl text-center">
             Success Stories
           </h1>
-          <p className="mx-auto max-w-3xl text-gray-600 text-lg">
+          <p className="mx-auto py-8 max-w-3xl text-lg text-center">
             "Hear from our volunteers and organizations about the incredible impact they have made. 
             Discover inspiring stories of how volunteering has transformed lives and communities. 
             Your contribution can create a lasting change too!"
