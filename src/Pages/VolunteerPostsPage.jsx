@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 // import BackToTopButton from '../Components/BackToTopButton';
 import { FiSearch, FiClock, FiMapPin, FiUsers, FiCalendar } from 'react-icons/fi';
+import FilterSidebar from '../Components/FilterSidebar';
 // import FilterSidebar from '../Components/FilterSidebar';
 // import LoadingSpinner from '../Components/LoadingSpinner';
 
@@ -81,15 +82,15 @@ const VolunteerPostsPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="mx-auto px-4 py-8 container">
+      <div className="flex md:flex-row flex-col mx-auto px-4 py-8 container">
         {/* Filter Sidebar */}
-        {/* <div className="mb-8 md:mb-0 pr-0 md:pr-6 md:w-1/4">
+        <div className="mb-8 md:mb-0 pr-0 md:pr-6 md:w-1/4">
           <FilterSidebar 
             posts={posts}
             filters={filters}
             onFilterChange={handleFilterChange}
           />
-        </div> */}
+        </div>
 
         {/* Posts List */}
         <div className="md:w-3/4">
